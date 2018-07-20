@@ -1,5 +1,6 @@
 <template>
   <div class="hello">
+    aaaaaaaaaaaaaaaaaaaaaaaaa
     <x-button @click.native="submit()" >submit</x-button>
   </div>
 </template>
@@ -17,7 +18,6 @@ export default {
   },
   methods: {
     submit() {
-      Bmob.initialize('15586428ac51fb6e41c481ee13251fc3', '69e68188c08bbf7de27877b85efcce7e')
       var GameScore = Bmob.Object.extend('userData')
       var gameScore = new GameScore()
       gameScore.set('name', '1234')

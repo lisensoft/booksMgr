@@ -4,7 +4,7 @@ import HelloWorld from '@/components/HelloWorld'
 
 Vue.use(Router)
 
-export default new Router({
+const RouterModel = new Router({
   routes: [
     {
       path: '/',
@@ -13,3 +13,10 @@ export default new Router({
     }
   ]
 })
+RouterModel.beforeEach((to, from, next) => {
+  if (from.fullPath === '/') {
+    Bmob.initialize('e67df222c241f05847465de1439a3249', '0a3776e20a24d1316deedc8732f2cc05')
+  }
+  next()
+})
+export default RouterModel
