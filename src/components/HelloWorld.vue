@@ -1,94 +1,34 @@
 <template>
   <div class="hello">
-    <h1>{{ msg }}</h1>
-    <h2>Essential Links</h2>
-    <ul>
-      <li>
-        <a
-          href="https://vuejs.org"
-          target="_blank"
-        >
-          Core Docs
-        </a>
-      </li>
-      <li>
-        <a
-          href="https://forum.vuejs.org"
-          target="_blank"
-        >
-          Forum
-        </a>
-      </li>
-      <li>
-        <a
-          href="https://chat.vuejs.org"
-          target="_blank"
-        >
-          Community Chat
-        </a>
-      </li>
-      <li>
-        <a
-          href="https://twitter.com/vuejs"
-          target="_blank"
-        >
-          Twitter
-        </a>
-      </li>
-      <br>
-      <li>
-        <a
-          href="http://vuejs-templates.github.io/webpack/"
-          target="_blank"
-        >
-          Docs for This Template
-        </a>
-      </li>
-    </ul>
-    <h2>Ecosystem</h2>
-    <ul>
-      <li>
-        <a
-          href="http://router.vuejs.org/"
-          target="_blank"
-        >
-          vue-router
-        </a>
-      </li>
-      <li>
-        <a
-          href="http://vuex.vuejs.org/"
-          target="_blank"
-        >
-          vuex
-        </a>
-      </li>
-      <li>
-        <a
-          href="http://vue-loader.vuejs.org/"
-          target="_blank"
-        >
-          vue-loader
-        </a>
-      </li>
-      <li>
-        <a
-          href="https://github.com/vuejs/awesome-vue"
-          target="_blank"
-        >
-          awesome-vue
-        </a>
-      </li>
-    </ul>
+    <x-button @click.native="submit()" >submit</x-button>
   </div>
 </template>
-
 <script>
+import { XButton } from 'vux'
 export default {
   name: 'HelloWorld',
-  data () {
+  components: {
+    XButton
+  },
+  data() {
     return {
       msg: 'Welcome to Your Vue.js App'
+    }
+  },
+  methods: {
+    submit() {
+      Bmob.initialize('15586428ac51fb6e41c481ee13251fc3', '69e68188c08bbf7de27877b85efcce7e')
+      var GameScore = Bmob.Object.extend('userData')
+      var gameScore = new GameScore()
+      gameScore.set('name', '1234')
+      gameScore.save(null, {
+        success: function(object) {
+          alert('create object success, object id:' + object.id)
+        },
+        error: function(model, error) {
+          alert('create object fail')
+        }
+      })
     }
   }
 }
