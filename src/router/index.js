@@ -19,4 +19,15 @@ RouterModel.beforeEach((to, from, next) => {
   }
   next()
 })
-export default RouterModel
+
+const baseRouter = [ // 基础路由信息直接挂到vue中
+  {
+    path: '/login',
+    component: resolve => require(['@/views/login'], resolve),
+    hidden: true
+  }
+]
+export default new Router({
+  routes: baseRouter
+})
+

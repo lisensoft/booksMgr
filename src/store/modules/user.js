@@ -1,5 +1,5 @@
 
-const user= {
+const user = {
   state: {
     id: '',
     username: '',
