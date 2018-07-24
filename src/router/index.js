@@ -7,6 +7,12 @@ Vue.use(Router)
 const RouterModel = new Router({
   routes: [
     {
+      path: '*',
+      redirect: {
+        path: '/'
+      }
+    },
+    {
       path: '/',
       name: 'HelloWorld',
       component: HelloWorld
@@ -20,14 +26,5 @@ RouterModel.beforeEach((to, from, next) => {
   next()
 })
 
-const baseRouter = [ // 基础路由信息直接挂到vue中
-  {
-    path: '/login',
-    component: resolve => require(['@/views/login'], resolve),
-    hidden: true
-  }
-]
-export default new Router({
-  routes: baseRouter
-})
+export default RouterModel
 

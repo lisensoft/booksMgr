@@ -1,6 +1,7 @@
 <template>
     <div>
-       <divider> {{ $t('Horizontal') }} </divider>
+      123
+       <!-- <divider> {{ $t('Horizontal') }} </divider>
     <flexbox>
       <flexbox-item><div class="flex-demo">1</div></flexbox-item>
       <flexbox-item><div class="flex-demo">2</div></flexbox-item>
@@ -60,7 +61,7 @@
     <flexbox>
       <flexbox-item :span="4"><div class="flex-demo">1/3</div></flexbox-item>
       <flexbox-item><div class="flex-demo">2/3</div></flexbox-item>
-    </flexbox>
+    </flexbox> -->
     </div>
 </template>
 <script>
