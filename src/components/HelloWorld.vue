@@ -2,6 +2,7 @@
   <div class="hello">
     12321312
     aaaaaaaaaaaaaaaaaaaaaaaaa
+    <i class="iconfont icon-add-account" style="font-size:20px"></i>
     <x-button @click.native="submit()" >submit</x-button>
   </div>
 </template>
