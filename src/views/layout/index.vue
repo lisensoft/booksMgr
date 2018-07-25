@@ -1,11 +1,9 @@
 <template>
   <div>
-    <transition name="fade" mode="out-in" >
-      <keep-alive>
-        <router-view class="child-view"></router-view>
-      </keep-alive>
-    </transition>
-    <tabbar></tabbar>
+    <keep-alive>
+      <router-view class="child-view"></router-view>
+    </keep-alive>
+  <tabbar></tabbar>
   </div>
 </template>
 
