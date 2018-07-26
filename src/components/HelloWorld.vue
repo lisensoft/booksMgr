@@ -1,21 +1,47 @@
 <template>
   <div class="hello">
-    12321312
-    aaaaaaaaaaaaaaaaaaaaaaaaa
-    <i class="iconfont icon-add-account" style="font-size:20px"></i>
-    <x-button @click.native="submit()" >submit</x-button>
+    <x-header class="vuxHander" title="哈喽"  ></x-header>
+    <box gap="50px 10px 60px 10px">
+      <group >
+        <cell is-link title="Simsssple" ></cell>
+        <cell is-link title="Switch icons" ></cell> <cell is-link title="Simsssple" ></cell>
+        <cell is-link title="Switch icons" ></cell> <cell is-link title="Simsssple" ></cell>
+        <cell is-link title="Switch icons" ></cell> <cell is-link title="Simsssple" ></cell>
+        <cell is-link title="Switch icons" ></cell> <cell is-link title="Simsssple" ></cell>
+        <cell is-link title="Switch icons" ></cell> <cell is-link title="Simsssple" ></cell>
+        <cell is-link title="Switch icons" ></cell> <cell is-link title="Simsssple" ></cell>
+        <cell is-link title="Switch icons" ></cell> <cell is-link title="Simsssple" ></cell>
+        <cell is-link title="Switch icons" ></cell> <cell is-link title="Simsssple" ></cell>
+        <cell is-link title="Switch icons" ></cell> <cell is-link title="Simsssple" ></cell>
+        <cell is-link title="Switch icons" ></cell> <cell is-link title="Simsssple" ></cell>
+        <cell is-link title="Switch icons" ></cell> <cell is-link title="Simsssple" ></cell>
+        <cell is-link title="Switch icons" ></cell> <cell is-link title="Simsssple" ></cell>
+        <cell is-link title="Switch icons" ></cell>
+        <cell-box >
+           <rater v-model="datas"></rater>
+        </cell-box>
+      </group>
+      <x-button @click.native="submit()"   type="warn" show-loading mini >submit</x-button>
+    </box>
   </div>
 </template>
 <script>
-import { XButton } from 'vux'
+import { XButton, Group, Cell, Box, CellBox, Rater, XHeader } from 'vux'
 export default {
   name: 'HelloWorld',
   components: {
-    XButton
+    XButton,
+    Group,
+    Cell,
+    Box,
+    CellBox,
+    Rater,
+    XHeader
   },
   data() {
     return {
-      msg: 'Welcome to Your Vue.js App'
+      msg: 'Welcome to Your Vue.js App',
+      datas: 6
     }
   },
   methods: {

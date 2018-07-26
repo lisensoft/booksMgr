@@ -12,6 +12,11 @@ const RouterModel = new Router({
       }
     },
     {
+      path: '/hello',
+      name: 'hello',
+      component: resolve => require(['@/components/helloWorld'], resolve)
+    },
+    {
       path: '/',
       name: '主页',
       redirect: '/bill',
@@ -26,6 +31,11 @@ const RouterModel = new Router({
         meta: {
           keepAlive: true
         }
+      },
+      {
+        path: '/hello',
+        name: 'hello',
+        component: resolve => require(['@/components/helloWorld'], resolve)
       },
       {
         path: 'reconcile',

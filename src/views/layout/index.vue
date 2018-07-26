@@ -3,7 +3,7 @@
     <keep-alive>
       <router-view class="child-view"></router-view>
     </keep-alive>
-  <tabbar></tabbar>
+    <tabbar></tabbar>
   </div>
 </template>
 
@@ -22,7 +22,5 @@ export default {
 </script>
 
 <style>
-.child-view{
-   margin-bottom: 50px;
-}
+
 </style>

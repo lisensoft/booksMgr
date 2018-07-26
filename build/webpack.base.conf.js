@@ -70,6 +70,10 @@ const originalConfig = {
         }
       },
       {
+         test: /\.scss$/,
+         loaders: ["style", "css", "sass"]
+      },
+      {
         test: /\.(woff2?|eot|ttf|otf)(\?.*)?$/,
         loader: 'url-loader',
         options: {
@@ -95,5 +99,8 @@ const originalConfig = {
 // const webpackConfig = originalConfig // 原来的 module.exports 代码赋值给变量 webpackConfig，即 将原来的module.exports 改为 const webpackConfig
 
 module.exports = vuxLoader.merge(originalConfig, {
-  plugins: ['vux-ui']
+   plugins: ['vux-ui', 'progress-bar', 'duplicate-style', {
+     name: 'less-theme',
+     path: 'src/assets/css/vuxtheme.less'
+   }]
 })
